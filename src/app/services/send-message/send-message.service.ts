@@ -16,7 +16,7 @@ export class SendMessageService {
   sendMessage(message: Message) :Observable<Message>
   {
     const payload = JSON.stringify(message);
-    return this.http.post<Message> (`localhost:8080`, payload, {headers: environment.headers, withCredentials: environment.withCredentials})
+    return this.http.post<Message> (`http://localhost:8080/1`, payload, {headers: environment.headers, withCredentials: environment.withCredentials})
   }
   
 }
