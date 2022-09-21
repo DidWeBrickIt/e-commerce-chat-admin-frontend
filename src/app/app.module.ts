@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
     ChatboxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
