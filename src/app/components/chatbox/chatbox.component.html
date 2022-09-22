@@ -1,23 +1,13 @@
 
 <div>
-    <div class="t">
-        <table>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>  
-            <br>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>
-            <br>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>
-            <br>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>
-            <br>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>
-            <br>
-            <tr>Hello, my name is Inigo Montoya. You killed my Father. Prepare to die.</tr>    
-            <br>
-
-           
-
-        </table>
+    <div class="t" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <ul>
+        <li *ngFor="let m of messages">
+         <p [ngClass]="{'admin': m.username === 'ADMIN'}"> {{m.username}}:</p>
+          {{m.message}}
+        </li>
+        </ul>
     </div>
-    <textarea></textarea>  <button>SEND</button> 
+  <input [(ngModel)]="reply" type="text">
+  <button (click)="send()">Send</button>
 </div>
