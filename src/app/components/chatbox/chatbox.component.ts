@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { re } from 'mathjs';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Message } from 'src/app/models/Message';
 import { SendMessageService } from 'src/app/services/send-message/send-message.service';
+import {ScrollToBottomDirectiveDirective} from "../../scroll-to-bottom-directive.directive";
 
 
 @Component({
@@ -11,23 +11,34 @@ import { SendMessageService } from 'src/app/services/send-message/send-message.s
 })
 export class ChatboxComponent implements OnInit {
 
-  constructor() { }
+  messages: Message[] = [];
+  reply: string = '';
+  interval: any;
+
+  @ViewChild(ScrollToBottomDirectiveDirective)  scroll!: ScrollToBottomDirectiveDirective;
+
+  constructor(
+    private messageService: SendMessageService,
+  ) {}
 
   ngOnInit(): void {
-
-    @Input() inMessage: Message;
-    let text : string = "hello";
-
-  SendMessageService() {
-    let message:Message = {message: text};
-    this.send-message.service.sendMessage(message).subscribe(
-      (response : Message) => {
-        console.log(response);
-      }
-    )
+    this.refreshData();
+    this.interval = setInterval(() => {
+      this.refreshData();
+    }, 2500);
   }
 
+  refreshData(): void{
+    this.messageService.getMessages().subscribe(data => this.messages = data);
   }
+
+  send(): void{
+    const message = new Message("ADMIN", this.reply);
+    console.log(message);
+    this.messageService.sendMessage(message).subscribe();
+
+  }
+
 
 }
 

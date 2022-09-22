@@ -9,10 +9,14 @@ div {
     text-align: center;
 }
 .t {
+  background-color: antiquewhite;
     overflow-y: auto;
     left: 27%;
     top: 4%;
     height: 70%;
+  display: flex;
+  flex-display: column-reverse;
+  overflow: scroll;
 }
 textarea {
     background-color: aquamarine;
@@ -51,4 +55,19 @@ button {
     color: blanchedalmond;
     border: 5px inset blueviolet;
 
+}
+input{
+  positon: absolute;
+  bottom: 5%;
+}
+ul{
+  list-style: none;
+}
+
+.admin{
+  text-align: right;
+}
+
+p{
+  text-align: left;
 }

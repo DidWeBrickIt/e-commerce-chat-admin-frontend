@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import {catchError, Observable} from 'rxjs';
 import { Message } from 'src/app/models/Message';
 
 
@@ -13,12 +12,17 @@ export class SendMessageService {
 
   constructor(private http:HttpClient) { }
 
-  sendMessage(message: Message) :Observable<Message>
-  {
+  sendMessage(message: Message): Observable<Message>{
+    const username = 'leeroy';
     const payload = JSON.stringify(message);
-    return this.http.post<Message> (`http://localhost:8080/1`, payload, {headers: environment.headers, withCredentials: environment.withCredentials})
+    return this.http.post<Message>(`http://localhost:8080/${username}/post`, payload)
   }
-  
+
+  getMessages(): Observable<Message[]>{
+    const username = 'leeroy';
+    return this.http.get<Message[]>(`http://localhost:8080/${username}/retrieve`)
+  }
+
 }
 
 
