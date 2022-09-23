@@ -6,13 +6,13 @@ import { ChatboxComponent } from './components/chatbox/chatbox.component';
 import { FormsModule } from '@angular/forms'
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { ScrollToBottomDirectiveDirective } from './scroll-to-bottom-directive.directive';
+import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
-    ScrollToBottomDirectiveDirective
+    ScrollToBottomDirective
   ],
   imports: [
     BrowserModule,
