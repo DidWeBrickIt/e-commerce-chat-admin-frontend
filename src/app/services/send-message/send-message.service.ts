@@ -13,14 +13,14 @@ export class SendMessageService {
   constructor(private http:HttpClient) { }
 
   sendMessage(message: Message): Observable<Message>{
-    const username = 'leeroy';
-    const payload = JSON.stringify(message);
-    return this.http.post<Message>(`http://localhost:8080/${username}/post`, payload)
+    // const username = 'leeroy';
+    // const payload = JSON.stringify(message);
+    return this.http.post<Message>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/adriano/post`, message)
   }
 
   getMessages(): Observable<Message[]>{
     const username = 'leeroy';
-    return this.http.get<Message[]>(`http://localhost:8080/${username}/retrieve`)
+    return this.http.get<Message[]>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/adriano/retrieve`)
   }
 
 }

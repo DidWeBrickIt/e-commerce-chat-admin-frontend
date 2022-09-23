@@ -1,7 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Message } from 'src/app/models/Message';
 import { SendMessageService } from 'src/app/services/send-message/send-message.service';
-import {ScrollToBottomDirectiveDirective} from "../../scroll-to-bottom-directive.directive";
+import {ScrollToBottomDirective} from "../../scroll-to-bottom.directive";
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ChatboxComponent implements OnInit {
   reply: string = '';
   interval: any;
 
-  @ViewChild(ScrollToBottomDirectiveDirective)  scroll!: ScrollToBottomDirectiveDirective;
+  @ViewChild(ScrollToBottomDirective)  scroll!: ScrollToBottomDirective;
 
   constructor(
     private messageService: SendMessageService,
