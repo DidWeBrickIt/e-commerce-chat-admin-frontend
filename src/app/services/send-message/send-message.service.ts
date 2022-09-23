@@ -12,15 +12,18 @@ export class SendMessageService {
 
   constructor(private http:HttpClient) { }
 
-  sendMessage(message: Message): Observable<Message>{
-    // const username = 'leeroy';
-    // const payload = JSON.stringify(message);
-    return this.http.post<Message>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/adriano/post`, message)
+  sendMessage(user: string, message: Message): Observable<Message>{
+    console.log(user, message);
+    return this.http.post<Message>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/${user}/post`, message);
   }
 
-  getMessages(): Observable<Message[]>{
-    const username = 'leeroy';
-    return this.http.get<Message[]>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/adriano/retrieve`)
+  getUser(): Observable<string[]>{
+    return this.http.get<string[]>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/tables`)
+  }
+
+  getMessages(user: string): Observable<Message[]>{
+    const username = user;
+    return this.http.get<Message[]>(`https://dwbi-e-commerce-tech-chat-2.icyflower-b4d66cd7.westus.azurecontainerapps.io/${username}/retrieve`);
   }
 
 }

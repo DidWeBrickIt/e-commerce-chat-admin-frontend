@@ -1,5 +1,11 @@
+<ul>
+  <li *ngFor="let user of users">
+    <a (click)="switchUser(user)">{{user}}</a>
+</ul>
+<button (click)="refreshUsers()">Refresh Users</button>
 
 <div>
+  <label>{{user | uppercase}}</label>
     <div class="t" #scrollMe [scrollTop]="scrollMe.scrollHeight">
         <ul>
         <li *ngFor="let m of messages">
