@@ -1,73 +1,43 @@
-div {
-    background-color: rgb(9, 81, 18);
-    position: absolute;
-    left: 30%;
-    top: 10%;
-    height: 80%;
-    width: 45%;
-    box-shadow: 4px 4px  rgba(0, 0, 0), -4px -4px rgba(0, 0, 0);
-    text-align: center;
+h1 {
+  background-image: linear-gradient(to bottom right, rgb( 242, 105, 38), rgb(106,109,116));
+  font-family: 'Futura Std Bold';
+  width: 1920px;
 }
-.t {
-  background-color: antiquewhite;
-    overflow-y: auto;
-    left: 27%;
-    top: 4%;
-    height: 70%;
-  display: flex;
-  flex-display: column-reverse;
-  overflow: scroll;
+
+#userList{
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(185, 185, 186);
 }
-textarea {
-    background-color: aquamarine;
-    position: absolute;
-    bottom: 2%;
-    left: 24%;
-    height: 90px;
-    width: 50%;
-    word-wrap: break-word;
-    word-break: keep-all;
-    text-align:left;
-    vertical-align: top;
-    overflow-y: auto ;
-    box-shadow: 2px 2px rgb(0, 0, 0), -2px -2px rgb(0, 0, 0);
-}
-table {
-    background-color: rgb(133, 249, 251);
-    position:absolute;
-    top: 0%;
-    left: 0%;
-    height: 100%;
+
+#all {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 227, 164, 0.75) 100%);
     width: 100%;
-    box-shadow: 2px 2px rebeccapurple, -2px -2px rebeccapurple;
-    word-wrap: break-word;
-    word-break: keep-all;
-    overflow-y: auto;
-    font-size: 20px;
-}
-button {
-    background-color: seagreen;
-    height: 50px;
-    width:100px;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-    color: blanchedalmond;
-    border: 5px inset blueviolet;
-
-}
-input{
-  positon: absolute;
-  bottom: 5%;
-}
-ul{
-  list-style: none;
+    height: 1080px;
 }
 
-.admin{
-  text-align: right;
+.btn {
+  background-color: rgb(72, 76, 86);
+  color: rgb(242, 105, 38);
 }
 
-p{
-  text-align: left;
+.btn:hover {
+  background-color: rgb(242, 105, 38);
+  transition: 0.7s;
+  color: black;
+}
+
+.list-group-item {
+  background-color: rgb(185, 185, 186);
+  font-family: 'Futura Std Book';
+}
+
+.name-list:hover {
+  background-color: rgb( 242, 105, 38);
+  transition: .5s ;
 }

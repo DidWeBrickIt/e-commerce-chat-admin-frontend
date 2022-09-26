@@ -37,7 +37,7 @@ export class ChatboxComponent implements OnInit {
     this.refreshData();
     this.interval = setInterval(() => {
       this.refreshData();
-    }, 10000);
+    }, 3000);
   }
 
   refreshData(): void{
@@ -65,7 +65,7 @@ export class ChatboxComponent implements OnInit {
     this.messageService.sendMessage(this.user, message).subscribe();
     this.refreshData();
     this.refreshUsers();
-
+    this.reply = '';
   }
 
 

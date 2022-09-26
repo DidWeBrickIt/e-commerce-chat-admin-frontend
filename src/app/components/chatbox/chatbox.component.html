@@ -1,19 +1,28 @@
-<ul>
-  <li *ngFor="let user of users">
-    <a (click)="switchUser(user)">{{user}}</a>
-</ul>
-<button (click)="refreshUsers()">Refresh Users</button>
-
-<div>
-  <label>{{user | uppercase}}</label>
-    <div class="t" #scrollMe [scrollTop]="scrollMe.scrollHeight">
-        <ul>
-        <li *ngFor="let m of messages">
-         <p [ngClass]="{'admin': m.username === 'ADMIN'}"> {{m.username}}:</p>
-          {{m.message}}
-        </li>
-        </ul>
+<div id="all">
+  <div class="container">
+    <div>
+      <h1>Tech Chat</h1>
     </div>
-  <input [(ngModel)]="reply" type="text">
-  <button (click)="send()">Send</button>
+    <div id="userList">
+      <ul class="list-group">
+        <li class="list-group-item name-list" *ngFor="let user of users">
+          <a (click)="switchUser(user)"><b>{{user}}</b></a>
+      </ul>
+      <button class="btn" (click)="refreshUsers()">Refresh Users</button>
+    </div>
+
+    <div id="chatbox">
+      <label>{{user | uppercase}}</label>
+      <div class="t" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let m of messages">
+            <p [ngClass]="{'admin': m.username === 'ADMIN'}"> <b>{{m.username}}:</b></p>
+            {{m.message}}
+          </li>
+        </ul>
+      </div>
+      <input [(ngModel)]="reply" type="text">
+      <button type="button" class="btn" (click)="send()">Send</button>
+    </div>
+  </div>
 </div>
