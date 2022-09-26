@@ -40,4 +40,5 @@ h1 {
 .name-list:hover {
   background-color: rgb( 242, 105, 38);
   transition: .5s ;
+  font-family: 'Futura Std Book';
 }
