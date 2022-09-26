@@ -5,20 +5,20 @@ import { AppComponent } from './app.component';
 import { ChatboxComponent } from './components/chatbox/chatbox.component';
 import { FormsModule } from '@angular/forms'
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
+// import { AppRoutingModule } from './app-routing/app-routing.module';
+// import { ScrollToBottomDirective } from './scroll-to-bottom.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatboxComponent,
-    ScrollToBottomDirective
+    // ScrollToBottomDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    // AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
